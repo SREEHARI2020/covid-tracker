@@ -25,7 +25,7 @@ import cx from 'classnames';
                     </CardContent>
 
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={cx(styles.card,styles.recoversed)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(styles.card,styles.recovered)}>
                     <CardContent>
  
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
