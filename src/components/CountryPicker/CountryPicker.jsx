@@ -24,7 +24,7 @@ fetchApi();
     return (
        <FormControl className={styles.formControl}>
            <NativeSelect defaultValue="" onChange={(e)=>handleChange(e.target.value)}>
-               <option value="global">Global</option>
+               <option value="">Global</option>
                {country.map((count,i)=>(<option key={i} value={count}>{count}</option>))}
            </NativeSelect>
 

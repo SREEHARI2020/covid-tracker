@@ -3,6 +3,7 @@ import './App.css';
 import{Cards,Chart,CountryPicker} from './components/Index';
 import styles from './App.module.css';
 import { fetchData } from './api/Index';
+import coronaImage from './image.png'
 
 function App() {
   const[data,setData]=useState({})
@@ -18,16 +19,20 @@ useEffect(() => {
   fetch();
  
 }, [])
-const handleChange=(count)=>{
+const handleChange=async(count)=>{
 
 setCountry(count)
+const data= await fetchData(count);
+setData(data);
+
 }
 
   return (
     <div className={styles.container}>
+      <img className={styles.image} height='200px'  src={coronaImage} alt='Covid-19'/>
      <Cards data={data}/>
      <CountryPicker handleChange={handleChange}/>
-     <Chart/>
+     <Chart data={data} country={country}/>
    
     </div>
   );
